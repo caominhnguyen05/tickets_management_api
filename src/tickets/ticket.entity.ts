@@ -34,9 +34,11 @@ export class Ticket {
         default: TicketStatus.AVAILABLE })
     status: TicketStatus;
 
+    // The name of the ticket owner
     @Column({ nullable: true })
     ticketOwnerName?: string;
 
+    // The price of the ticket
     @Column({ type: 'int', default: 0 })
     price: number;
 
@@ -49,6 +51,7 @@ export class Ticket {
     @Column({type: 'datetime', nullable: true})
     validationDate?: Date | null;
 
+    // The date when the ticket was created
     @CreateDateColumn()
     createdAt: Date;
 }
