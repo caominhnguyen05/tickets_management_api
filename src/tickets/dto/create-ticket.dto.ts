@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsUUID, IsOptional } from 'class-validator';
+import { IsNotEmpty, IsString, IsUUID, IsOptional, IsNumber } from 'class-validator';
 
 export class CreateTicketDto {
   @IsNotEmpty()
@@ -9,4 +9,9 @@ export class CreateTicketDto {
   @IsString()
   @IsNotEmpty()
   ticketOwnerName?: string;
+
+  @IsOptional()
+  @IsNumber()
+  @IsNotEmpty()
+  price?: number;
 }
