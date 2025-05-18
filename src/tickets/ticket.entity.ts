@@ -7,7 +7,7 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { TicketStatus } from './ticket-status-enum';
+import { TicketStatus } from './ticket-status.enum';
 
 @Entity('tickets')
 export class Ticket {
@@ -47,7 +47,7 @@ export class Ticket {
     // The date when the ticket was validated
     // This field is nullable, as it may not be applicable for all tickets
     @Column({type: 'datetime', nullable: true})
-    validationDate?: Date;
+    validationDate?: Date | null;
 
     @CreateDateColumn()
     createdAt: Date;

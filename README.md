@@ -49,3 +49,9 @@ The number of tickets sold for the event has also been updated.
 ### GET /tickets/:id
 Retrieve a ticket by ID.
 ![alt text](image-2.png)
+
+### POST - Create ticket with missing field
+![alt text](image-4.png)
+
+### POST - Create ticket with non-existent eventId
+![alt text](image-5.png)

@@ -3,7 +3,7 @@ import {InjectRepository} from '@nestjs/typeorm';
 import {Repository} from 'typeorm';
 import {Ticket} from './ticket.entity';
 import {Event} from '../events/event.entity';
-import {TicketStatus} from './ticket-status-enum';
+import {TicketStatus} from './ticket-status.enum';
 import {CreateTicketDto} from './dto/create-ticket.dto';
 import {v4 as uuidv4} from 'uuid';
 
