@@ -9,46 +9,6 @@ import {v4 as uuidv4} from 'uuid';
 
 @Injectable()
 export class TicketsService {
-    // constructor(
-    //     @InjectRepository(Ticket)
-    //     private readonly ticketRepository: Repository<Ticket>,
-    //     @InjectRepository(Event)
-    //     private readonly eventRepository: Repository<Event>,
-    // ) {}
-
-    // async createTicket(createTicketDto: CreateTicketDto): Promise<Ticket> {
-    //     const {eventId, ticketOwnerName, price} = createTicketDto;
-
-    //     // Check if the event exists
-    //     const event = await this.eventRepository.findOne({where: {id: eventId}});
-    //     if (!event) {
-    //         throw new NotFoundException(`Event with ID ${eventId} not found`);
-    //     }
-
-    //     // Check if the event has available tickets
-    //     if (event.ticketsSold >= event.totalTicketCapacity) {
-    //         throw new BadRequestException('No available tickets for this event');
-    //     }
-
-    //     // Create a new ticket
-    //     const ticket = this.ticketRepository.create({
-    //         event,
-    //         ticketCode: uuidv4(),
-    //         status: TicketStatus.AVAILABLE,
-    //         ticketOwnerName,
-    //         price,
-    //     });
-
-    //     // Save the ticket to the database
-    //     await this.ticketRepository.save(ticket);
-
-    //     // Update the event's tickets sold count
-    //     event.ticketsSold += 1;
-    //     await this.eventRepository.save(event);
-
-    //     return ticket;
-    // }
-
     constructor(
         @InjectRepository(Ticket)
         private readonly ticketRepository: Repository<Ticket>,

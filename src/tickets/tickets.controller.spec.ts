@@ -80,6 +80,28 @@ describe('TicketsController', () => {
             expect(result).toEqual(mockTicket);
             expect(service.createTicket).toHaveBeenCalledWith(createTicketDto);
         });
+        it('should throw NotFoundException if event not found', async () => {
+            const createTicketDto: CreateTicketDto = {
+                eventId: uuidv4(), // Invalid event ID
+                ticketOwnerName: 'Jane',
+                price: 30.00,
+            };
+
+            // Simulate the service throwing a NotFoundException
+            mockTicketService.createTicket.mockRejectedValue(new NotFoundException());
+
+            await expect(controller.create(createTicketDto)).rejects.toThrow(
+                NotFoundException,
+            );
+            expect(service.createTicket).toHaveBeenCalledWith(createTicketDto);
+        });
+        it('should throw BadRequestException if no available tickets', async () => {
+            const createTicketDto: CreateTicketDto = {
+                eventId: mockEventId,
+                ticketOwnerName: 'Jane',
+                price: 30.00,
+            };
+        });
     });
 
     describe('findAllTickets', () => {
