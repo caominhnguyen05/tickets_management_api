@@ -35,7 +35,7 @@ $ npm run test:cov
 ```
 
 ## API Endpoints test with Postman
-I have manually added an event record in the the SQLite database which I use for the tickets endpoints.
+I have manually added an event record in the the SQLite database which I use in the dndpoints below.
 ### POST /tickets
 Creates a new ticket.
 ![alt text](image.png)
@@ -55,3 +55,6 @@ Retrieve a ticket by ID.
 
 ### POST - Create ticket with non-existent eventId
 ![alt text](image-5.png)
+
+### GET - Get ticket with invalid ID format
+![alt text](image-6.png)

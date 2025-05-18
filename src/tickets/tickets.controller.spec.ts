@@ -19,6 +19,7 @@ const mockTicketService = {
 const mockEventId = uuidv4();
 const mockTicketId = uuidv4();
 
+// Mock event data
 const mockEvent: Event = {
     id: mockEventId,
     name: 'Mock Event',
@@ -31,6 +32,7 @@ const mockEvent: Event = {
     createdAt: new Date(),
 }
 
+// Mock ticket data
 const mockTicket: Ticket = {
     id: mockTicketId,
     event: mockEvent,
@@ -67,6 +69,7 @@ describe('TicketsController', () => {
 
     describe('createTicket', () => {
         it('should create and return a ticket', async () => {
+            // Mock data for creating a ticket
             const createTicketDto: CreateTicketDto = {
                 eventId: mockEventId,
                 ticketOwnerName: 'Jane',
@@ -75,6 +78,7 @@ describe('TicketsController', () => {
 
             // When the createTicket method is called, it should return the mock ticket instead of calling the actual service
             mockTicketService.createTicket.mockResolvedValue(mockTicket);
+            // Call the create method of the controller
             const result = await controller.create(createTicketDto);
 
             expect(result).toEqual(mockTicket);

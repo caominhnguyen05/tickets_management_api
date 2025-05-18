@@ -9,6 +9,8 @@ import {v4 as uuidv4} from 'uuid';
 
 @Injectable()
 export class TicketsService {
+    // The constructor injects the Ticket and Event repositories using TypeORM's @InjectRepository decorator.
+    // This allows the service to perform database operations on the Ticket and Event entities.
     constructor(
         @InjectRepository(Ticket)
         private readonly ticketRepository: Repository<Ticket>,
