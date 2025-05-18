@@ -1,4 +1,4 @@
-import Ticket from '../tickets/ticket.entity';
+import {Ticket} from '../tickets/ticket.entity';
 import {
   Entity,
   Column,
@@ -43,7 +43,7 @@ export class Event {
     @Column({ type: 'int', default: 0 })
     ticketsSold: number;
 
-    @OneToMany(() => Ticket, (ticket) => ticket.event)
+    @OneToMany(() => Ticket, ticket => ticket.event)
     tickets: Ticket[];
 
     @CreateDateColumn()

@@ -28,7 +28,10 @@ export class Ticket {
 
     // The status of the ticket
     // This uses an enum to define the possible statuses of a ticket
-    @Column({ type: 'enum', enum: TicketStatus, default: TicketStatus.AVAILABLE })
+    @Column({ 
+        type: 'text', 
+        enum: TicketStatus, 
+        default: TicketStatus.AVAILABLE })
     status: TicketStatus;
 
     @Column({ nullable: true })
