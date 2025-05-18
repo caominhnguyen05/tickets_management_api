@@ -6,6 +6,7 @@ import { TicketsModule } from './tickets/tickets.module';
 import { EventsModule } from './events/events.module';   
 import { Event } from './events/event.entity';           
 import { Ticket } from './tickets/ticket.entity';      
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
