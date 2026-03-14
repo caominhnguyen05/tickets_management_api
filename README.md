@@ -1,4 +1,4 @@
-## Ticket management API
+## Ticket Management API
 
 A RESTful API for managing event tickets, built with the NestJS framework.
 The API allows clients to create, retrieve, and validate tickets for events, while maintaining ticket counts associated with each event.
@@ -15,12 +15,14 @@ The project demonstrates backend development concepts such as:
 The API automatically updates the number of tickets sold for an event whenever a new ticket is created.
 
 ## Project setup
+Clone the repository and install the required dependencies:
 
 ```bash
 $ npm install
 ```
 
-## Compile and run the project
+## Running the Application
+The application can be started in several modes depending on the development stage.
 
 ```bash
 # development
@@ -32,8 +34,23 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+## Database
+The project uses SQLite as a lightweight database for storing:
+- Events
+- Tickets
 
-## Run tests
+For testing purposes, an event record was manually inserted into the database so that tickets can be created and linked to an existing event.
+
+Each ticket contains:
+- `id` – unique ticket identifier
+- `eventId` – the event associated with the ticket
+- `name` – name of the ticket holder
+- `email` – contact email for the ticket holder
+
+When a ticket is successfully created, the ticket counter for the associated event is automatically incremented.
+
+## Running Tests
+The project includes automated tests to ensure the API works correctly.
 
 ```bash
 # unit tests
