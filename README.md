@@ -1,6 +1,18 @@
 ## Ticket management API
 
-A simple REST API for creating and retrieving ticket, built using the [NestJS](https://github.com/nestjs/nest) framework.
+A RESTful API for managing event tickets, built with the NestJS framework.
+The API allows clients to create, retrieve, and validate tickets for events, while maintaining ticket counts associated with each event.
+
+The project demonstrates backend development concepts such as:
+
+- RESTful API design
+- Input validation and error handling
+- Database integration using SQLite
+- Modular architecture with NestJS
+- API testing using Postman
+- Automated testing with unit and end-to-end tests
+
+The API automatically updates the number of tickets sold for an event whenever a new ticket is created.
 
 ## Project setup
 
