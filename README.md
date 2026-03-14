@@ -1,6 +1,6 @@
 ## Ticket management API
 
-A simple REST API for creating and retrieving ticket, built using the [NestJS](https://github.com/nestjs/nest) framework.
+A NestJS-based REST API for managing support tickets, including creating and retrieving ticket records.
 
 ## Project setup
 
